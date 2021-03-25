@@ -30,24 +30,32 @@ class MyTestCase(unittest.TestCase):
         subtract_test_data.clear()
 
     def test_multiply_method_calculator(self):
-        calculator = Calculator()
-        self.assertEqual(calculator.multiply(3, 2), 6)
-        self.assertEqual(calculator.result, 6)
+        multiply_test_data = CsvReader('/src/Unit Test Multiplication.csv').data
+        for row in multiply_test_data:
+            self.assertEqual(self.calculator.multiply(row['Value 2'], row['Value 1']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+        multiply_test_data.clear()
 
     def test_divide_method_calculator(self):
-        calculator = Calculator()
-        self.assertEqual(calculator.divide(6, 2), 3)
-        self.assertEqual(calculator.result, 3)
+        divide_test_data = CsvReader('/src/Unit Test Division.csv').data
+        for row in divide_test_data:
+            self.assertEqual(self.calculator.divide(row['Value 2'], row['Value 1']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+        divide_test_data.clear()
 
     def test_square_method_calculator(self):
-        calculator = Calculator()
-        self.assertEqual(calculator.square(2), 4)
-        self.assertEqual(calculator.result, 4)
+        square_test_data = CsvReader('/src/Unit Test Square.csv').data
+        for row in square_test_data:
+            self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+        square_test_data.clear()
 
-    def test_sqrroot_method_calculator(self):
-        calculator = Calculator()
-        self.assertEqual(calculator.sqrt(16), 4)
-        self.assertEqual(calculator.result, 4)
+    def test_sqrt_method_calculator(self):
+        sqrt_test_data = CsvReader('/src/Unit Test Square Root.csv').data
+        for row in sqrt_test_data:
+            self.assertEqual(self.calculator.sqrt(row['Value 1']), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+        sqrt_test_data.clear()
 
 
 if __name__ == '__main__':

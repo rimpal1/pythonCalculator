@@ -46,7 +46,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_sqrroot_method_calculator(self):
         calculator = Calculator()
-        self.assertEqual(calculator.sqrroot(16), 4)
+        self.assertEqual(calculator.sqrt(16), 4)
         self.assertEqual(calculator.result, 4)
 
 

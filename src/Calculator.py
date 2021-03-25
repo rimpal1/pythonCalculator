@@ -1,16 +1,24 @@
 def addition(a, b):
+    a = int(a)
+    b = int(b)
     return a + b
 
 
 def subtraction(a, b):
+    a = int(a)
+    b = int(b)
     return a - b
 
 
 def Multiplication(a, b):
+    a = int(a)
+    b = int(b)
     return a * b
 
 
 def division(a, b):
+    a = int(a)
+    b = int(b)
     return a / b
 
 
